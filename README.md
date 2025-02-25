@@ -4,104 +4,104 @@ This repository contains a Node.js RESTful API for a car rental system, built wi
 
 ## Features
 
-- *User Authentication*: Register and log in with secure password hashing and JWT-based authentication.
-- *User Profile Management*: View and manage user profile information.
-- *Car Browsing*: Browse and search available rental cars.
+- **User Authentication**: Register and log in with secure password hashing and JWT-based authentication.
+- **User Profile Management**: View and manage user profile information.
+- **Car Browsing**: Browse and search available rental cars.
 
 ## Prerequisites
 
 Before setting up the project, ensure you have the following installed:
 
 - [Node.js](https://nodejs.org/) (version 14 or higher)
-- [MongoDB](https://www.mongodb.com/) (running locally or on a cloud provider)
+- [MongoDB](https://www.mongodb.com/) (running locally)
 - [npm](https://www.npmjs.com/) (Node package manager)
 
 ## Installation
 
-1. *Clone the Repository*:
+1. **Clone the Repository**:
 
-   
+   ```bash
    git clone https://github.com/arbnorracii/behamics-task.git
    cd behamics-task
-   
+   ```
 
-2. *Install Dependencies*:
+2. **Install Dependencies**:
 
-   
+   ```bash
    npm install
-   
+   ```
 
-3. *Set Up Environment Variables*:
+3. **Set Up Environment Variables**:
 
-   Create a .env file in the root directory and add the following variables:
+   Create a `.env` file in the root directory and add the following variables:
 
-   
-env
+   ```env
    PORT=3000
    MONGODB_URI=your_mongodb_connection_string
    JWT_SECRET=your_jwt_secret_key
-   
+   ```
 
-   Replace your_mongodb_connection_string with your actual MongoDB URI and your_jwt_secret_key with a secure key of your choice.
+   Replace `your_mongodb_connection_string` with your actual MongoDB URI and `your_jwt_secret_key` with a secure key of your choice.
 
-4. *Start the Server*:
+4. **Start the Server**:
 
-   
-   npm start
-   
+   ```bash
+   npm start dev
+   ```
 
-   The API will be running at http://localhost:3000.
+   The API will be running at `http://localhost:3000`.
 
 ## API Endpoints
 
-- *User Registration*: POST /api/users/register
-- *User Login*: POST /api/users/login
-- *Get User Profile*: GET /api/users/profile (Protected)
-- *Get All Cars*: GET /api/cars
-- *Get Car by ID*: GET /api/cars/:id
+- **User Registration**: `POST /api/users/register`
+- **User Login**: `POST /api/users/login`
+- **Get User Profile**: `GET /api/users/profile` (Protected)
+- **Get All Cars**: `GET /api/cars`
+- **Get Car by ID**: `GET /api/cars/:id`
 
 ## Testing with Postman
 
 You can test the API endpoints using [Postman](https://www.postman.com/). Below are some sample requests:
 
 ### 1. User Registration
-- *Endpoint*: POST http://localhost:5000/api/users/register
-- *Payload*:
-  
+- **Endpoint**: `POST http://localhost:5000/api/users/register`
+- **Payload**:
+  ```json
   {
     "name": "Arbnor Raci",
     "email": "arbnorii.r@gmail.com.com",
     "password": "*****"
   }
-  
+  ```
 
 ### 2. User Login
-- *Endpoint*: POST http://localhost:5000/api/users/login
-- *Payload*:
-  
+- **Endpoint**: `POST http://localhost:5000/api/users/login`
+- **Payload**:
+  ```json
   {
     "email": "arbnorii.r@gmail.com.com",
     "password": "*****"
   }
-  
+  ```
 
 ### 3. Get User Profile (Requires Auth Token)
-- *Endpoint*: GET http://localhost:5000/api/users/profile
-- *Headers*:
-  
+- **Endpoint**: `GET http://localhost:5000/api/users/profile`
+- **Headers**:
+  ```json
   {
     "Authorization": "Bearer *****"
   }
-  
+  ```
 
 ### 4. Get All Cars
-- *Endpoint*: GET http://localhost:5000/api/cars
+- **Endpoint**: `GET http://localhost:5000/api/cars`
 
 ### 5. Get Car by ID
-- *Endpoint*: GET http://localhost:5000/api/cars/{car_id}
+- **Endpoint**: `GET http://localhost:5000/api/cars/{car_id}`
 
 ## Project Structure
 
+```
 behamics-task/
 │-- server.js          # Entry point of the application
 │-- routes/            # Contains route definitions for users and cars
@@ -109,4 +109,4 @@ behamics-task/
 │-- middleware/        # Contains authentication middleware
 │-- .env.example       # Example environment variables file
 │-- package.json       # Project dependencies and scripts
-
+```
