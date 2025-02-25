@@ -1,4 +1,4 @@
-# Behamic Task API
+# Behamics Task API
 
 This repository contains a Node.js RESTful API for a car rental system, built with Express.js and MongoDB. The API provides user authentication using JWT and allows users to register, log in, view their profiles, and browse available rental cars.
 
@@ -44,25 +44,25 @@ Before setting up the project, ensure you have the following installed:
 4. **Start the Server**:
 
    ```bash
-   npm start dev
+   npm run dev
    ```
 
    The API will be running at `http://localhost:5000`.
 
 ## API Endpoints
 
-- **User Registration**: `POST http://localhost:5000/api/users/register`
-- **User Login**: `POST http://localhost:5000/api/users/login`
-- **Get User Profile**: `GET http://localhost:5000/api/users/profile` (Protected)
-- **Get All Cars**: `GET http://localhost:5000/api/cars`
-- **Get Car by ID**: `GET http://localhost:5000/api/cars/:id`
+- **User Registration**: `POST http://localhost:5000/api/auth/register`
+- **User Login**: `POST http://localhost:5000/api/auth/login`
+- **Get User Profile**: `GET http://localhost:5000/api/user/my-profile` (Protected)
+- **Get All Cars**: `GET http://localhost:5000/api/cars/rental-cars`
+- **Get Car by Year**: `GET http://localhost:5000/api/cars/rental-cars?year=2015`
 
 ## Testing with Postman
 
 You can test the API endpoints using [Postman](https://www.postman.com/). Below are some sample requests:
 
 ### 1. User Registration
-- **Endpoint**: `POST http://localhost:5000/api/users/register`
+- **Endpoint**: `POST http://localhost:5000/api/auth/register`
 - **Payload**:
   ```json
   {
@@ -73,7 +73,7 @@ You can test the API endpoints using [Postman](https://www.postman.com/). Below 
   ```
 
 ### 2. User Login
-- **Endpoint**: `POST http://localhost:5000/api/users/login`
+- **Endpoint**: `POST http://localhost:5000/api/auth/login`
 - **Payload**:
   ```json
   {
@@ -83,7 +83,7 @@ You can test the API endpoints using [Postman](https://www.postman.com/). Below 
   ```
 
 ### 3. Get User Profile (Requires Auth Token)
-- **Endpoint**: `GET http://localhost:5000/api/users/profile`
+- **Endpoint**: `GET http://localhost:5000/api/user/my-profile`
 - **Headers**:
   ```json
   {
@@ -92,10 +92,10 @@ You can test the API endpoints using [Postman](https://www.postman.com/). Below 
   ```
 
 ### 4. Get All Cars
-- **Endpoint**: `GET http://localhost:5000/api/cars`
+- **Endpoint**: `GET http://localhost:5000/api/cars/rental-cars`
 
-### 5. Get Car by ID
-- **Endpoint**: `GET http://localhost:5000/api/cars/{car_id}`
+### 5. Get Car by Year
+- **Endpoint**: `GET http://localhost:5000/api/cars/rental-cars?year=2015`
 
 ## Project Structure
 
