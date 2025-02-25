@@ -103,8 +103,14 @@ You can test the API endpoints using [Postman](https://www.postman.com/). Below 
 behamics-task/
 │-- server.js          # Entry point of the application
 │-- routes/            # Contains route definitions for users and cars
+│      |-- auth.js
+│      |-- car.js
+│      |-- users.js
 │-- models/            # Defines Mongoose schemas and models
+│      |-- Car.js
+│      |-- User.js
 │-- middleware/        # Contains authentication middleware
+│      |-- authMiddleware.js
 │-- .env.example       # Example environment variables file
 │-- package.json       # Project dependencies and scripts
 ```
