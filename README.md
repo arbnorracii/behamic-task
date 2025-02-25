@@ -36,12 +36,10 @@ Before setting up the project, ensure you have the following installed:
    Create a `.env` file in the root directory and add the following variables:
 
    ```env
-   PORT=3000
-   MONGODB_URI=your_mongodb_connection_string
-   JWT_SECRET=your_jwt_secret_key
+   PORT=5000
+   MONGODB_URI=mongodb://localhost:27017/carRental
+   JWT_SECRET=**********
    ```
-
-   Replace `your_mongodb_connection_string` with your actual MongoDB URI and `your_jwt_secret_key` with a secure key of your choice.
 
 4. **Start the Server**:
 
@@ -49,15 +47,15 @@ Before setting up the project, ensure you have the following installed:
    npm start dev
    ```
 
-   The API will be running at `http://localhost:3000`.
+   The API will be running at `http://localhost:5000`.
 
 ## API Endpoints
 
-- **User Registration**: `POST /api/users/register`
-- **User Login**: `POST /api/users/login`
-- **Get User Profile**: `GET /api/users/profile` (Protected)
-- **Get All Cars**: `GET /api/cars`
-- **Get Car by ID**: `GET /api/cars/:id`
+- **User Registration**: `POST http://localhost:5000/api/users/register`
+- **User Login**: `POST http://localhost:5000/api/users/login`
+- **Get User Profile**: `GET http://localhost:5000/api/users/profile` (Protected)
+- **Get All Cars**: `GET http://localhost:5000/api/cars`
+- **Get Car by ID**: `GET http://localhost:5000/api/cars/:id`
 
 ## Testing with Postman
 
